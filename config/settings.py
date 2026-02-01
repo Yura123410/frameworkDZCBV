@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Мои приложения
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -83,25 +86,25 @@ HOST = os.getenv('MS_SQL_SERVER')
 DATABASE = os.getenv('MS_SQL_DATABASE')
 DRIVER = os.getenv('MS_SQL_DRIVER')
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': DATABASE,
-        'PASSWORD': PASSWORD,
-        'HOST': HOST,
-        'POST': '',
-        'OPTIONS': {
-            DRIVER
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'mssql',
+#        'NAME': DATABASE,
+#        'PASSWORD': PASSWORD,
+#        'HOST': HOST,
+#        'POST': '',
+#        'OPTIONS': {
+#            DRIVER
+#        }
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
