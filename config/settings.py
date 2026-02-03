@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-
+from pyodbc import drivers
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -98,14 +98,15 @@ DATABASES = {
 #    'default': {
 #        'ENGINE': 'mssql',
 #        'NAME': DATABASE,
+#        'USER' : USER,
 #        'PASSWORD': PASSWORD,
 #        'HOST': HOST,
-#        'POST': '',
+#        'PORT': '',
 #        'OPTIONS': {
-#            DRIVER
+#             'driver' :DRIVER
 #        }
-#    }
-#}
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
