@@ -87,26 +87,25 @@ DATABASE = os.getenv('MS_SQL_DATABASE')
 PAD_DATABASE = os.getenv('MS_SQL_PAD_DATABASE')
 DRIVER = os.getenv('MS_SQL_DRIVER')
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': DATABASE,
+        'PASSWORD': PASSWORD,
+        'HOST': HOST,
+        'PORT': '',
+        'OPTIONS': {
+            'driver': DRIVER,
+        },
     }
 }
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'mssql',
-#        'NAME': DATABASE,
-#        'USER' : USER,
-#        'PASSWORD': PASSWORD,
-#        'HOST': HOST,
-#        'PORT': '',
-#        'OPTIONS': {
-#             'driver' :DRIVER
-#        }
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -132,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'Europe/MSK'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
