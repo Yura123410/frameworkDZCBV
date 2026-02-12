@@ -16,7 +16,7 @@ def index(request):
 
 def breeds_list_view(request):
     context = {
-        'object_list': Breed.objects.all(),
+        'objects_list': Breed.objects.all(),
         'title': 'Питомник - Все наши породы'
     }
     return  render(request, 'dogs/breeds.html', context)
@@ -32,7 +32,7 @@ def breeds_dogs_list_view(request, pk: int):
 
 def dogs_list_view(request):
     context = {
-        'object': Dog.objects.all(),
+        'object_list': Dog.objects.all(),
         'title': 'Питомник все наши собаки'
     }
     return render(request, 'dogs/dogs.html', context)
