@@ -82,4 +82,4 @@ def dog_delete_view(request, pk):
         'title': 'Удалить собаку',
         'object': dog_object,
     }
-    return render(request, 'dogs/delete.html')
+    return render(request, 'dogs/delete.html', context)
