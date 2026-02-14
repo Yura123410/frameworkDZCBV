@@ -17,3 +17,7 @@ class UserRegisterForm(forms.ModelForm):
             raise forms.ValidationError('Ошибка! Пароли не совпадают!')
         return cd['password2']
 
+
+class UserLoginForm(forms.Form):
+    email = forms.EmailField(label='email')
+    password = forms.CharField(label='пароль', widget=forms.PasswordInput)
