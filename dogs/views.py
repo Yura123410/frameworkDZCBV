@@ -24,7 +24,7 @@ def breeds_list_view(request):
 def breeds_dogs_list_view(request, pk: int):
     breeds_item = Breed.objects.get(pk=pk)
     context = {
-        'object_list': Dog.objects.filter(breed_id=pk),
+        'objects_list': Dog.objects.filter(breed_id=pk),
         'title': f'Собаки породы - {breeds_item}',
         'breed_pk': breeds_item.pk,
     }
