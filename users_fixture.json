@@ -1,0 +1,82 @@
+[
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$iN35ZAGeDwWD03khmZocsZ$Jnwo3VjJtkQl7Ke5fxz7rlGPNEAD34FU23ZD6RoUqaM=",
+        "last_login": "2026-02-16T17:04:34.829Z",
+        "is_superuser": true,
+        "is_staff": true,
+        "date_joined": "2026-02-07T19:45:04.295Z",
+        "email": "admin@web.top",
+        "first_name": "Admin",
+        "last_name": "Adminov",
+        "avatar": "",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$RHdSL6GbVsl5cIkosaGI9a$Wn4J0airLiQyGHKb41F/m3Y+vVP6/jQNB44prhYkrv8=",
+        "last_login": "2026-02-14T18:39:16.326Z",
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2026-02-14T17:56:30.015Z",
+        "email": "yura@gmail.com",
+        "first_name": "",
+        "last_name": "",
+        "avatar": "",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$GElCiLA8olBH9gNkOfQLVV$UrOKxrmfBScn8HiCnYO+lFFEym9NNfo6uO5ScD/G9Ys=",
+        "last_login": "2026-02-15T20:10:05.538Z",
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2026-02-15T18:16:34.393Z",
+        "email": "yura2@gmail.com",
+        "first_name": "Yura",
+        "last_name": "Yurov",
+        "avatar": "users/219988.png",
+        "phone": "88005553535",
+        "telegram": "yura2tg.name",
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$HXOi6WqerwJRpaBJ5nAmRO$WYfsyWgqnrBK0XUQtxY89RLI8QXChSWqJ0seO6S/CZM=",
+        "last_login": "2026-02-15T19:44:25.884Z",
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2026-02-15T19:44:12.380Z",
+        "email": "yura3@gmail.com",
+        "first_name": "Yura3",
+        "last_name": "Yurov3",
+        "avatar": "users/219958.png",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

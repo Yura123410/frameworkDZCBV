@@ -1,0 +1,112 @@
+[
+{
+    "model": "dogs.breed",
+    "pk": 1,
+    "fields": {
+        "name": "Немецкая Овчарка",
+        "description": "Хороший сторож, большая и пушистая"
+    }
+},
+{
+    "model": "dogs.breed",
+    "pk": 2,
+    "fields": {
+        "name": "Колли",
+        "description": "Красивая, снималась в кино"
+    }
+},
+{
+    "model": "dogs.breed",
+    "pk": 3,
+    "fields": {
+        "name": "Кинг Чарльз Спаниель",
+        "description": "Очень милая и ленивая порода"
+    }
+},
+{
+    "model": "dogs.breed",
+    "pk": 4,
+    "fields": {
+        "name": "Чихуахуа",
+        "description": "Концентрация злобы"
+    }
+},
+{
+    "model": "dogs.breed",
+    "pk": 5,
+    "fields": {
+        "name": "Джек Рассел Терьер",
+        "description": "Активная порода, известная по фильму маска"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 1,
+    "fields": {
+        "name": "Мухтар",
+        "breed": 1,
+        "photo": "dogs/images.jpg",
+        "birth_date": "2025-07-10"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 2,
+    "fields": {
+        "name": "Альберта",
+        "breed": 1,
+        "photo": "dogs/images_1.jpg",
+        "birth_date": "2025-03-06"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 3,
+    "fields": {
+        "name": "Майло",
+        "breed": 5,
+        "photo": "dogs/ddaa253dcc9ac6239e96e88402d5832b_i-14923.jpg",
+        "birth_date": "2024-07-11"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 4,
+    "fields": {
+        "name": "Лесси",
+        "breed": 2,
+        "photo": "dogs/istockphoto-509092254-612x612.jpg",
+        "birth_date": "2023-10-08"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 5,
+    "fields": {
+        "name": "Рен",
+        "breed": 4,
+        "photo": "dogs/c99b5f826b06ceb86feacaa3e07c3872.jpg",
+        "birth_date": "2023-10-27"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 6,
+    "fields": {
+        "name": "Пушок",
+        "breed": 3,
+        "photo": "dogs/st-2.jpg",
+        "birth_date": "2020-08-08"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 7,
+    "fields": {
+        "name": "Майло Маска",
+        "breed": 5,
+        "photo": "dogs/imagesМайло.jpg",
+        "birth_date": null
+    }
+}
+]
