@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.urls.base import reverse
 from django.http import HttpResponseRedirect ,HttpResponse
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
-from users.forms import UserRegisterForm, UserLoginForm, UserUpdateForm
+from users.forms import UserRegisterForm, UserLoginForm, UserUpdateForm, UserChangePasswordForm
 
 
 def user_register_view(request):
@@ -80,8 +81,29 @@ def user_update_view(request):
     }
     return render(request, 'users/user_register_update.html', context=context)
 
+@login_required(login_url='users:user_login')
+def user_change_password_view(request):
+    user_object = request.user
+    form = UserChangePasswordForm(user_object, request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            user_object = form.save()
+            update_session_auth_hash(request, user_object)
+            messages.success(request, 'Пароль был успешно изменен')
+            return HttpResponseRedirect(reverse('users:user_profile'))
+        else:
+            messages.error(request, 'Не удалось изменить пароль')
+    context = {
+        'form':form,
+        'title': f'Изменить пароль {user_object}',
+    }
+    return render(request, 'users/user_change-password.html', context=context)
+
 
 def user_logout_view(request):
     logout(request)
     return redirect('dogs:index')
+
+
+
 
