@@ -12,9 +12,13 @@ class Command(BaseCommand):
                             PWD={PASSWORD}"""
         try:
             conn = pyodbc.connect(Conection_string)
-            conn.autocommit = True
-            conn.execute(fr'CREATE DATABASE {DATABASE};')
         except pyodbc.Error as err:
             print(err)
         else:
-            print(f"База данных {DATABASE} успешно создана")
+            conn.autocommit = True
+            try:
+                conn.execute(fr'CREATE DATABASE {DATABASE};')
+            except pyodbc.Error as err:
+                print(err)
+            else:
+                print(f"База данных {DATABASE} успешно создана")
