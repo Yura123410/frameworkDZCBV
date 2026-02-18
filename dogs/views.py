@@ -22,6 +22,7 @@ def breeds_list_view(request):
     }
     return  render(request, 'dogs/breeds.html', context)
 
+
 def breeds_dogs_list_view(request, pk: int):
     breeds_item = Breed.objects.get(pk=pk)
     context = {
@@ -31,6 +32,7 @@ def breeds_dogs_list_view(request, pk: int):
     }
     return render(request, 'dogs/dogs.html', context)
 
+
 def dogs_list_view(request):
     context = {
         'objects_list': Dog.objects.all(),
@@ -38,11 +40,14 @@ def dogs_list_view(request):
     }
     return render(request, 'dogs/dogs.html', context)
 
+@login_required(login_url='users:user_login')
 def dog_create_view(request):
     if request.method == 'POST':
         form = DogForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            dog_object = form.save()
+            dog_object.owner = request.user
+            dog_object.save()
             return HttpResponseRedirect(reverse('dogs:dogs_list'))
     context = {
             'title': 'Добавить собаку',
@@ -50,6 +55,7 @@ def dog_create_view(request):
         }
     return render(request, 'dogs/create_update.html',context)
 
+@login_required(login_url='users:user_login')
 def dog_detail_view(request, pk):
     dog_object = get_object_or_404(Dog, pk=pk)
     context = {
@@ -59,6 +65,8 @@ def dog_detail_view(request, pk):
     }
     return render(request, 'dogs/detail.html', context)
 
+
+@login_required(login_url='users:user_login')
 def dog_update_view(request, pk):
     dog_object = get_object_or_404(Dog, pk=pk)
     if request.method == 'POST':
