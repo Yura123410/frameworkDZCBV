@@ -107,7 +107,10 @@ def user_change_password_view(request):
     return render(request, 'users/user_change_password.html', context=context)
 
 class UserLogoutView(LogoutView):
-    pass
+    template_name = 'users/user_logout.html'
+    extra_context = {
+        'title': 'Выход из аккаунта'
+    }
 
 # def user_logout_view(request):
 #     logout(request)
