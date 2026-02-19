@@ -6,7 +6,7 @@ from pyexpat.errors import messages
 def send_register_email(email):
     send_mail(
         subject='Поздравляем с регистрацией на нашем сервисе',
-        message='Вы успешно зарегистрировались на платформе WEB524ShelterFBV',
+        message='Вы успешно зарегистрировались на платформе WEB524ShelterCBV',
         from_email=settings.EMAIL_HOST_USER,
         recipient_list=[email]
     )

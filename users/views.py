@@ -24,6 +24,11 @@ class UserRegisterView(CreateView):
         'title': 'Создать аккаунт'
     }
 
+    def form_valid(self, form):
+        self.object = form.save()
+        send_register_email(self.object.email)
+        return super().form_valid(form)
+
 class UserLoginView(LoginView):
     template_name = 'users/user_login.html'
     form_class = UserLoginForm
@@ -73,22 +78,6 @@ class UserPasswordChangeView(PasswordChangeView):
     }
 
 
-# @login_required(login_url='users:user_login')
-# def user_update_view(request):
-#     user_object = request.user
-#     if request.method == 'POST':
-#         form = UserUpdateForm(request.POST, request.FILES,instance=user_object)
-#         if form.is_valid():
-#             user_object = form.save()
-#             user_object.save()
-#             return HttpResponseRedirect(reverse('users:user_profile'))
-#     context = {
-#         'object': user_object,
-#         'title': f'Изменить профиль {user_object}',
-#         'form': UserUpdateForm(instance=user_object),
-#     }
-#     return render(request, 'users/user_register_update.html', context=context)
-
 @login_required(login_url='users:user_login')
 def user_change_password_view(request):
     user_object = request.user
@@ -112,9 +101,6 @@ class UserLogoutView(LogoutView):
         'title': 'Выход из аккаунта'
     }
 
-# def user_logout_view(request):
-#     logout(request)
-#     return redirect('dogs:index')
 
 @login_required(login_url='users:user_login')
 def user_generate_new_password_view(request):
