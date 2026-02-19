@@ -80,7 +80,7 @@
         "breed": 2,
         "photo": "dogs/istockphoto-509092254-612x612.jpg",
         "birth_date": "2023-10-08",
-        "owner": 4
+        "owner": 2
     }
 },
 {
@@ -91,7 +91,7 @@
         "breed": 4,
         "photo": "dogs/c99b5f826b06ceb86feacaa3e07c3872.jpg",
         "birth_date": "2023-10-27",
-        "owner": 6
+        "owner": 2
     }
 },
 {
@@ -102,7 +102,7 @@
         "breed": 3,
         "photo": "dogs/st-2.jpg",
         "birth_date": "2020-08-08",
-        "owner": 7
+        "owner": 1
     }
 },
 {
@@ -113,7 +113,7 @@
         "breed": 5,
         "photo": "dogs/imagesМайло.jpg",
         "birth_date": null,
-        "owner": 14
+        "owner": 1
     }
 }
 ]
