@@ -24,42 +24,31 @@ class UserRegisterView(CreateView):
         'title': 'Создать аккаунт'
     }
 
-
-# def user_register_view(request):
-#     if request.method == 'POST':
-#         form = UserRegisterForm(request.POST)
-#         if form.is_valid():
-#             new_user = form.save()
-#             # print(new_user)
-#             # print(form.cleaned_data['password'])
-#             new_user.set_password(form.cleaned_data['password'])
-#             new_user.save()
-#             send_register_email(new_user.email)
-#             return HttpResponseRedirect(reverse('users:user_login'))
-#     context = {
-#         'title': 'Создать аккаунт',
-#         'form': UserRegisterForm
-#     }
-#     return render(request, 'users/user_register_update.html', context=context)
-
-
-def user_login_view(request):
-    if request.method == 'POST':
-        form = UserLoginForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(email=cd['email'], password=cd['password'])
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return  HttpResponseRedirect(reverse('dogs:index'))
-                return HttpResponse('Аккаунт неактивен')
-            return HttpResponse('Нет такого пользователя!')
-    context = {
-        'title': 'Авторизация',
-        'form': UserLoginForm
+class UserLoginView(LoginView):
+    template_name = 'users/user_login.html'
+    form_class = UserLoginForm
+    extra_context = {
+        'title': 'Авторизация'
     }
-    return render(request, 'users/user_login.html', context=context)
+
+
+# def user_login_view(request):
+#     if request.method == 'POST':
+#         form = UserLoginForm(request.POST)
+#         if form.is_valid():
+#             cd = form.cleaned_data
+#             user = authenticate(email=cd['email'], password=cd['password'])
+#             if user is not None:
+#                 if user.is_active:
+#                     login(request, user)
+#                     return  HttpResponseRedirect(reverse('dogs:index'))
+#                 return HttpResponse('Аккаунт неактивен')
+#             return HttpResponse('Нет такого пользователя!')
+#     context = {
+#         'title': 'Авторизация',
+#         'form': UserLoginForm
+#     }
+#     return render(request, 'users/user_login.html', context=context)
 
 """
 # если в БД нет значения по умолчанию
