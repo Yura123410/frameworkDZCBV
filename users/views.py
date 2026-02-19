@@ -64,6 +64,14 @@ class UserUpdateView(UpdateView):
         context_data['title'] = f'Изменить профиль: {user_obj}'
         return context_data
 
+class UserPasswordChangeView(PasswordChangeView):
+    form_class = UserChangePasswordForm
+    template_name = 'users/user_change_password.html'
+    success_url = reverse_lazy('users:user_profile')
+    extra_context = {
+        'title': "Изменить пароль"
+    }
+
 
 # @login_required(login_url='users:user_login')
 # def user_update_view(request):
@@ -96,7 +104,7 @@ def user_change_password_view(request):
         'form':form,
         'title': f'Изменить пароль {user_object}',
     }
-    return render(request, 'users/user_change-password.html', context=context)
+    return render(request, 'users/user_change_password.html', context=context)
 
 
 def user_logout_view(request):
