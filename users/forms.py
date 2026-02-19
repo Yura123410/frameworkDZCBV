@@ -18,7 +18,7 @@ class UserForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = User
         fields = ('email', 'first_name', 'last_name', 'phone')
-        # exclude = ('is_active')
+
 
 class UserRegisterForm(StyleFormMixin, UserCreationForm):
 
@@ -36,8 +36,6 @@ class UserRegisterForm(StyleFormMixin, UserCreationForm):
 
 class UserLoginForm(StyleFormMixin, AuthenticationForm):
     pass
-
-
 
 class UserUpdateForm(StyleFormMixin, forms.ModelForm):
     class Meta:
