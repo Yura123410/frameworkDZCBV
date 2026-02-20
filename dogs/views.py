@@ -41,13 +41,6 @@ class DogsListView(ListView):
     }
     template_name = 'dogs/dogs.html'
 
-# def dogs_list_view(request):
-#     context = {
-#         'object_list': Dog.objects.all(),
-#         'title': 'Питомник все наши собаки'
-#     }
-#     return render(request, 'dogs/dogs.html', context)
-
 class DogCreateView(CreateView):
     model = Dog
     form_class = DogForm
@@ -56,6 +49,13 @@ class DogCreateView(CreateView):
         'title': 'Добавить собаку'
     }
     success_url = reverse_lazy('dogs:dogs_list')
+
+    def form_valid(self, form):
+        self.dog_object = form.save()
+        self.dog_object.owner = self.request.user
+        self.dog_object.save()
+        send_dog_creation(self.request.user.email, self.dog_object)
+        return super().form_valid(form)
 
 
 class DogDetailView(DetailView):
