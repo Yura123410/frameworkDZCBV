@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Установленные приложения
+    'redis',
+
     # Мои приложения
     'users',
     'dogs',
@@ -161,6 +164,18 @@ LOGIN_REDIRECT_URL = 'dogs:index'
 # LOGOUT_REDIRECT_URL = 'dogs:index'
 LOGIN_URL = '/users:user_login/'
 
+# CACHE_ENABLED = True
+# CACHE_LOCATION=redis://127.0.0.1:6379
+
+CACHE_ENABLED = os.getenv('CACHE_LOCATION') == "True"
+if CACHE_ENABLED:
+    CACHES = {
+        'default':
+            {
+                "BACKEND": 'django.core.cache.backends.redis.RedisCache',
+                "LOCATION": os.getenv('CACHE_LOCATION')
+            }
+    }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
