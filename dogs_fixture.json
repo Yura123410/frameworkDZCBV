@@ -47,7 +47,8 @@
         "breed": 1,
         "photo": "dogs/images.jpg",
         "birth_date": "2025-07-10",
-        "owner": null
+        "owner": null,
+        "is_active": true
     }
 },
 {
@@ -56,9 +57,10 @@
     "fields": {
         "name": "Альберта",
         "breed": 1,
-        "photo": "dogs/images_1.jpg",
+        "photo": "dogs/images_1_3r7c1nd.jpg",
         "birth_date": "2025-03-06",
-        "owner": null
+        "owner": null,
+        "is_active": true
     }
 },
 {
@@ -69,7 +71,8 @@
         "breed": 5,
         "photo": "dogs/ddaa253dcc9ac6239e96e88402d5832b_i-14923.jpg",
         "birth_date": "2024-07-11",
-        "owner": 1
+        "owner": 1,
+        "is_active": true
     }
 },
 {
@@ -80,7 +83,8 @@
         "breed": 2,
         "photo": "dogs/istockphoto-509092254-612x612.jpg",
         "birth_date": "2023-10-08",
-        "owner": 2
+        "owner": 2,
+        "is_active": true
     }
 },
 {
@@ -91,7 +95,8 @@
         "breed": 4,
         "photo": "dogs/c99b5f826b06ceb86feacaa3e07c3872.jpg",
         "birth_date": "2023-10-27",
-        "owner": 2
+        "owner": 2,
+        "is_active": true
     }
 },
 {
@@ -102,7 +107,8 @@
         "breed": 3,
         "photo": "dogs/st-2.jpg",
         "birth_date": "2020-08-08",
-        "owner": 1
+        "owner": 1,
+        "is_active": true
     }
 },
 {
@@ -113,7 +119,30 @@
         "breed": 5,
         "photo": "dogs/imagesМайло.jpg",
         "birth_date": null,
-        "owner": 1
+        "owner": 1,
+        "is_active": true
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 13,
+    "fields": {
+        "name": "Мухтар 2",
+        "breed": 1,
+        "photo": "dogs/images_1_vRVRXdn.jpg",
+        "birth_date": "2023-10-08",
+        "owner": 5,
+        "is_active": true
+    }
+},
+{
+    "model": "dogs.dogparent",
+    "pk": 1,
+    "fields": {
+        "dog": 13,
+        "name": "Бернард",
+        "breed": 1,
+        "birth_date": null
     }
 }
 ]
