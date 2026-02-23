@@ -4,13 +4,7 @@
 <form method="post" enctype="multipart/form-data" class="row">
     <div class="col-6">
         <div class="card">
-<!--            <div class="car_header">-->
-<!--                {% if object %}-->
-<!--                Редактирование собаки-->
-<!--                {% else %}-->
-<!--                Добавление собаки-->
-<!--                {% endif %}-->
-<!--            </div>-->
+            {% csrf_token %}
             {% if object %}
             <img class="card-img-top"
                  src="{{ object.photo|dogs_media }}" width="300" height="320"
@@ -19,15 +13,22 @@
             <div class="card-body">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn-outline-success">
-                    {% if object %}
-                    Сохранить
+                <input type="submit" class="btn btn-outline-success"
+                        value="{% if object %}Сохранить{% else %}Добавить{% endif %}">
+                {% if object %}
+                <a href="{% url 'dogs:dog_toggle_activity' object.pk %}"
+                   class="btn btn-outline-warning float-right">
+                    {% if object.is_active %}
+                    Деактивировать
                     {% else %}
-                    Добавить
+                    Активировать
                     {% endif %}
-
-                </button>
+                </a>
+                {% endif %}
             </div>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'dogs:dogs_list' %}" class="btn btn-outline-primary"><< Назад</a>
         </div>
     </div>
     {% if formset %}

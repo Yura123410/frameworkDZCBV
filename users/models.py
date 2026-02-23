@@ -9,6 +9,10 @@ class UserRoles(models.TextChoices):
     MODERATOR = 'moderator', _('moderator')
     USER = 'user', _('user')
 
+    # @classmethod
+    # def choices(cls):
+    #     return [(key.value, key.name) for key in cls]
+
 class User(AbstractUser):
     username = None
     email = models.EmailField(unique=True, verbose_name='Эл. почта')

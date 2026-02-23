@@ -10,6 +10,7 @@ from django.forms import inlineformset_factory
 from dogs.models import Breed, Dog, DogParent
 from dogs.forms import DogForm, DogParentForm, DogCreateForm
 from users.services import send_dog_creation
+from users.models import UserRoles
 
 def index(request):
     context = {
@@ -47,7 +48,10 @@ class DogsListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        queryset = queryset.filter(is_active=True)
+        if self.request.user.role in [UserRoles.MODERATOR, UserRoles.ADMIN]:
+            queryset = queryset.filter(is_active=False)
+        if self.request.user.role == UserRoles.USER:
+            queryset = queryset.filter(is_active=False, owner=self.request.user)
         return queryset
 
 class DogDeactivatedListView(LoginRequiredMixin, ListView):
@@ -149,5 +153,5 @@ def dog_toggle_activity(request, pk):
     else:
         dog_object.is_active = True
     dog_object.save()
-    return redirect(reverse('dogs:dog_list'))
+    return redirect(reverse('dogs:dogs_list'))
 
