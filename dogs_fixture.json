@@ -47,8 +47,9 @@
         "breed": 1,
         "photo": "dogs/images.jpg",
         "birth_date": "2025-07-10",
+        "is_active": true,
         "owner": null,
-        "is_active": true
+        "views": "0"
     }
 },
 {
@@ -59,8 +60,9 @@
         "breed": 1,
         "photo": "dogs/images_1_3r7c1nd.jpg",
         "birth_date": "2025-03-06",
-        "owner": null,
-        "is_active": true
+        "is_active": true,
+        "owner": 1,
+        "views": "0"
     }
 },
 {
@@ -71,8 +73,9 @@
         "breed": 5,
         "photo": "dogs/ddaa253dcc9ac6239e96e88402d5832b_i-14923.jpg",
         "birth_date": "2024-07-11",
-        "owner": 1,
-        "is_active": true
+        "is_active": true,
+        "owner": null,
+        "views": "0"
     }
 },
 {
@@ -83,8 +86,9 @@
         "breed": 2,
         "photo": "dogs/istockphoto-509092254-612x612.jpg",
         "birth_date": "2023-10-08",
+        "is_active": true,
         "owner": 2,
-        "is_active": true
+        "views": "0"
     }
 },
 {
@@ -95,8 +99,9 @@
         "breed": 4,
         "photo": "dogs/c99b5f826b06ceb86feacaa3e07c3872.jpg",
         "birth_date": "2023-10-27",
+        "is_active": true,
         "owner": 2,
-        "is_active": true
+        "views": "0"
     }
 },
 {
@@ -107,8 +112,9 @@
         "breed": 3,
         "photo": "dogs/st-2.jpg",
         "birth_date": "2020-08-08",
+        "is_active": true,
         "owner": 1,
-        "is_active": true
+        "views": "0"
     }
 },
 {
@@ -119,8 +125,9 @@
         "breed": 5,
         "photo": "dogs/imagesМайло.jpg",
         "birth_date": null,
+        "is_active": false,
         "owner": 1,
-        "is_active": true
+        "views": "0"
     }
 },
 {
@@ -131,8 +138,22 @@
         "breed": 1,
         "photo": "dogs/images_1_vRVRXdn.jpg",
         "birth_date": "2023-10-08",
+        "is_active": true,
         "owner": 5,
-        "is_active": true
+        "views": "0"
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 14,
+    "fields": {
+        "name": "Тест",
+        "breed": 2,
+        "photo": "",
+        "birth_date": "2023-10-08",
+        "is_active": true,
+        "owner": 1,
+        "views": "0"
     }
 },
 {
