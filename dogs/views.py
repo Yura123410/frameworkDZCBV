@@ -52,20 +52,22 @@ class DogsListView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        # Для модераторов и админов показываем ВСЕХ собак (и активных, и неактивных)
+        # Для модераторов и админов показываем ВСЕХ собак
         if hasattr(self.request.user, 'role') and self.request.user.role in [UserRoles.MODERATOR, UserRoles.ADMIN]:
-            return queryset  # Показываем всех собак
+            return queryset
 
-        # Для обычных пользователей показываем только АКТИВНЫХ собак
-        # (плюс возможно их собственных неактивных, если нужно)
+        # Для обычных пользователей
         if hasattr(self.request.user, 'role') and self.request.user.role == UserRoles.USER:
-            # Активные собаки + неактивные, принадлежащие пользователю
-            return queryset.filter(
-                models.Q(is_active=True) |
-                models.Q(is_active=False, owner=self.request.user)
-            )
+            # Сначала получаем ID активных собак
+            active_ids = list(queryset.filter(is_active=True).values_list('id', flat=True))
+            # Получаем ID неактивных собак пользователя
+            inactive_my_ids = list(queryset.filter(is_active=False, owner=self.request.user).values_list('id', flat=True))
+            # Объединяем ID
+            all_ids = active_ids + inactive_my_ids
+            # Фильтруем по объединенным ID
+            return queryset.filter(id__in=all_ids)
 
-        # Для неавторизованных пользователей - только активные
+        # Для неавторизованных - только активные
         return queryset.filter(is_active=True)
 
 class DogDeactivatedListView(LoginRequiredMixin, ListView):
@@ -109,12 +111,13 @@ class DogDetailView(DetailView):
         dog_object = self.get_object()
         context_data['title'] = f'Подробная информация\n{dog_object}'
         dog_object_increase = get_object_or_404(Dog, pk=dog_object.pk)
-        if dog_object.owner != self.request.user:
-            dog_object_increase.views_count()
-        # if dog_object.owner:
-        #     object_owner_email = dog_object.owner.email
-        #     if dog_object_increase.views % 20 == 0 and dog_object_increase.views != 0:
-        #         send_views_mail(dog_object, object_owner_email, dog_object_increase.views)
+        if dog_object.owner != self.request.user and not self.request.user.is_staff:
+            # if not self.request.user.is_staff:
+                dog_object_increase.views_count()
+        if dog_object.owner:
+            object_owner_email = dog_object.owner.email
+            if dog_object_increase.views % 20 == 0 and dog_object_increase.views != 0:
+                send_views_mail(dog_object, object_owner_email, dog_object_increase.views)
         return context_data
 
 class DogUpdateView(LoginRequiredMixin, UpdateView):
