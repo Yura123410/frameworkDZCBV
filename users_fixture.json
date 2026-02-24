@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$1000000$hhcb36hN9VlKIvCtEzo7Zo$FDFvlvagoAegcCekPbl19RzRmW8aHRCbpmz/zDV7TGw=",
-        "last_login": "2026-02-21T18:01:08Z",
+        "last_login": "2026-02-24T18:35:18.995Z",
         "is_superuser": true,
         "is_staff": true,
         "date_joined": "2026-02-18T20:34:14Z",
@@ -67,7 +67,7 @@
     "pk": 4,
     "fields": {
         "password": "pbkdf2_sha256$1000000$taqGUCvMgIHcDx2HhhCLFM$3aMWQuvAjawieLZ0b1XCjPe9BybS0zFx8sBLz29r+xY=",
-        "last_login": "2026-02-19T20:17:40.769Z",
+        "last_login": "2026-02-24T18:30:39.615Z",
         "is_superuser": false,
         "is_staff": false,
         "date_joined": "2026-02-19T17:23:41.155Z",
@@ -88,12 +88,12 @@
     "pk": 5,
     "fields": {
         "password": "pbkdf2_sha256$1000000$LZWXnHQSOecVldYcFNXE0V$HG6rvIH/6ry4uEUqDPPnI+AvbiePuEWlkXru41XyL/k=",
-        "last_login": "2026-02-20T17:57:18Z",
+        "last_login": "2026-02-23T16:30:41.836Z",
         "is_superuser": false,
         "is_staff": false,
         "date_joined": "2026-02-19T20:30:19Z",
         "email": "yusimo@yandex.ru",
-        "role": "admin",
+        "role": "user",
         "first_name": "Anonymous",
         "last_name": "Anonymous",
         "avatar": "",

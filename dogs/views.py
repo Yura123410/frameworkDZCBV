@@ -10,6 +10,8 @@ from django.core.exceptions import PermissionDenied
 
 from dogs.models import Breed, Dog, DogParent
 from dogs.forms import DogForm, DogParentForm, DogCreateForm
+from dogs.services import send_views_mail
+from users import models
 from users.services import send_dog_creation
 from users.models import UserRoles
 
@@ -49,11 +51,22 @@ class DogsListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        if self.request.user.role in [UserRoles.MODERATOR, UserRoles.ADMIN]:
-            queryset = queryset.filter(is_active=False)
-        if self.request.user.role == UserRoles.USER:
-            queryset = queryset.filter(is_active=False, owner=self.request.user)
-        return queryset
+
+        # Для модераторов и админов показываем ВСЕХ собак (и активных, и неактивных)
+        if hasattr(self.request.user, 'role') and self.request.user.role in [UserRoles.MODERATOR, UserRoles.ADMIN]:
+            return queryset  # Показываем всех собак
+
+        # Для обычных пользователей показываем только АКТИВНЫХ собак
+        # (плюс возможно их собственных неактивных, если нужно)
+        if hasattr(self.request.user, 'role') and self.request.user.role == UserRoles.USER:
+            # Активные собаки + неактивные, принадлежащие пользователю
+            return queryset.filter(
+                models.Q(is_active=True) |
+                models.Q(is_active=False, owner=self.request.user)
+            )
+
+        # Для неавторизованных пользователей - только активные
+        return queryset.filter(is_active=True)
 
 class DogDeactivatedListView(LoginRequiredMixin, ListView):
     model = Dog
@@ -95,6 +108,13 @@ class DogDetailView(DetailView):
         context_data = super().get_context_data()
         dog_object = self.get_object()
         context_data['title'] = f'Подробная информация\n{dog_object}'
+        dog_object_increase = get_object_or_404(Dog, pk=dog_object.pk)
+        if dog_object.owner != self.request.user:
+            dog_object_increase.views_count()
+        # if dog_object.owner:
+        #     object_owner_email = dog_object.owner.email
+        #     if dog_object_increase.views % 20 == 0 and dog_object_increase.views != 0:
+        #         send_views_mail(dog_object, object_owner_email, dog_object_increase.views)
         return context_data
 
 class DogUpdateView(LoginRequiredMixin, UpdateView):

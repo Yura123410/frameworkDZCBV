@@ -9,9 +9,6 @@ class UserRoles(models.TextChoices):
     MODERATOR = 'moderator', _('moderator')
     USER = 'user', _('user')
 
-    # @classmethod
-    # def choices(cls):
-    #     return [(key.value, key.name) for key in cls]
 
 class User(AbstractUser):
     username = None
@@ -22,7 +19,7 @@ class User(AbstractUser):
     avatar = models.ImageField(upload_to='users/', verbose_name='Аватар', **NULLABLE)
     phone = models.CharField(max_length=35, verbose_name='Номер телефона', **NULLABLE)
     telegram = models.CharField(max_length=150, verbose_name='Аккаунт телеграм', **NULLABLE)
-    is_active = models.BooleanField(default=True, verbose_name='Статут аккаунта')
+    is_active = models.BooleanField(default=True, verbose_name='Статус аккаунта')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
