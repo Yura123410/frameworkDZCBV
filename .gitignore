@@ -6,5 +6,6 @@ __pycache__/
 .env
 .venv
 
-/users/migrations/
-/dogs/migrations/
+#/users/migrations/
+#/dogs/migrations/
+#/reviews/migrations/
