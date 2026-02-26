@@ -8,6 +8,7 @@ from redis.commands.search.querystring import querystring
 
 from reviews.forms import ReviewForm
 from reviews.models import Review
+from reviews.utils import generate_slug
 from users.models import UserRoles
 
 
@@ -45,6 +46,17 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         'title': 'Добавить отзыв'
     }
 
+    def form_valid(self, form):
+        if self.request.user.role not in [UserRoles.USER, UserRoles.ADMIN]:
+            return HttpResponseForbidden
+        review_object = form.save()
+        print(review_object.slug)
+        if review_object.slug == 'temp_slug':
+            review_object.slug = generate_slug()
+            print(review_object.slug)
+        review_object.author = self.request.user
+        review_object.save()
+        return super().form_valid(form)
 
 class ReviewDetailView(DetailView):
     model = Review
@@ -67,7 +79,7 @@ class ReviewUpdateView(LoginRequiredMixin, UpdateView):
         if review_object.author != self.request.user and self.request.user not in [UserRoles.ADMIN,
                                                                                    UserRoles.MODERATOR]:
             raise PermissionDenied()
-        return self.object
+        return review_object
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data()
@@ -86,3 +98,13 @@ class ReviewDeleteView(PermissionRequiredMixin, DeleteView):
 
     def get_success_url(self):
         return reverse('reviews:reviews_list')
+
+def review_toggle_activity(request, slug):
+    review_object = get_object_or_404(Review, slug=slug)
+    if review_object.sign_of_review:
+        review_object.sign_of_review = False
+        review_object.save()
+        return redirect(reverse('reviews:reviews_deactivated'))
+    review_object.sign_of_review = True
+    review_object.save()
+    return redirect(reverse('reviews:reviews_list'))
