@@ -41,7 +41,7 @@ class ReviewDeactivatedListView(ListView):
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
     form_class = ReviewForm
-    template_name = 'reviews/create.html'
+    template_name = 'reviews/create_update.html'
     extra_context = {
         'title': 'Добавить отзыв'
     }
@@ -69,10 +69,10 @@ class ReviewDetailView(DetailView):
 class ReviewUpdateView(LoginRequiredMixin, UpdateView):
     model = Review
     form_class = ReviewForm
-    template_name = 'reviews/update.html'
+    template_name = 'reviews/create_update.html'
 
     def get_success_url(self):
-        return reverse('reviews:review_detail')
+        return reverse('reviews:review_detail', args=[self.kwargs.get('slug')])
 
     def get_object(self, queryset=None):
         review_object = super().get_object(queryset)
@@ -88,13 +88,18 @@ class ReviewUpdateView(LoginRequiredMixin, UpdateView):
         return context_data
 
 
-class ReviewDeleteView(PermissionRequiredMixin, DeleteView):
+class ReviewDeleteView(DeleteView):
     model = Review
     template_name = 'reviews/delete.html'
-    permission_required = 'reviews.delete_review'
     extra_context = {
         'title': 'Удалить отзыв'
     }
+
+    def get_object(self, queryset = None):
+        review_object = super().get_object(queryset)
+        if review_object.author != self.request.user and self.request.user.role != UserRoles.ADMIN:
+            raise PermissionDenied()
+        return review_object
 
     def get_success_url(self):
         return reverse('reviews:reviews_list')
