@@ -3,6 +3,7 @@
 {% block content %}
 
 <div class="container">
+    {% include 'dogs/includes/inc_pagination.html' %}
     <div class="row">
         {% for object in object_list %}
         {% include 'reviews/includes/inc_review_card.html' with object=object %}

@@ -18,6 +18,7 @@ class ReviewListView(ListView):
         'title': 'Наши отзывы'
     }
     template_name = 'reviews/reviews.html'
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -31,6 +32,7 @@ class ReviewDeactivatedListView(ListView):
         'title': 'Неактивные отзывы'
     }
     template_name = 'reviews/reviews.html'
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -57,6 +59,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         review_object.author = self.request.user
         review_object.save()
         return super().form_valid(form)
+
 
 class ReviewDetailView(DetailView):
     model = Review
@@ -95,7 +98,7 @@ class ReviewDeleteView(DeleteView):
         'title': 'Удалить отзыв'
     }
 
-    def get_object(self, queryset = None):
+    def get_object(self, queryset=None):
         review_object = super().get_object(queryset)
         if review_object.author != self.request.user and self.request.user.role != UserRoles.ADMIN:
             raise PermissionDenied()
@@ -103,6 +106,7 @@ class ReviewDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('reviews:reviews_list')
+
 
 def review_toggle_activity(request, slug):
     review_object = get_object_or_404(Review, slug=slug)

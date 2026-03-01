@@ -15,6 +15,7 @@ from users import models
 from users.services import send_dog_creation
 from users.models import UserRoles
 
+
 def index(request):
     context = {
         'object_list': Breed.objects.all()[:3],
@@ -22,12 +23,15 @@ def index(request):
     }
     return render(request, 'dogs/index.html', context)
 
+
 class BreedListView(ListView):
     model = Breed
     extra_context = {
         'title': 'Все наши породы'
     }
     template_name = 'dogs/breeds.html'
+    paginate_by = 3
+
 
 class DogBreedsListView(ListView):
     model = Dog
@@ -35,6 +39,7 @@ class DogBreedsListView(ListView):
     extra_context = {
         'title': 'Собаки выбранной породы'
     }
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = super().get_queryset().filter(breed_id=self.kwargs.get('pk'))
@@ -48,27 +53,13 @@ class DogsListView(ListView):
         'title': 'Питомник все наши собаки'
     }
     template_name = 'dogs/dogs.html'
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        queryset = queryset.filter(is_active=True)
+        return queryset
 
-        # Для модераторов и админов показываем ВСЕХ собак
-        if hasattr(self.request.user, 'role') and self.request.user.role in [UserRoles.MODERATOR, UserRoles.ADMIN]:
-            return queryset
-
-        # Для обычных пользователей
-        if hasattr(self.request.user, 'role') and self.request.user.role == UserRoles.USER:
-            # Сначала получаем ID активных собак
-            active_ids = list(queryset.filter(is_active=True).values_list('id', flat=True))
-            # Получаем ID неактивных собак пользователя
-            inactive_my_ids = list(queryset.filter(is_active=False, owner=self.request.user).values_list('id', flat=True))
-            # Объединяем ID
-            all_ids = active_ids + inactive_my_ids
-            # Фильтруем по объединенным ID
-            return queryset.filter(id__in=all_ids)
-
-        # Для неавторизованных - только активные
-        return queryset.filter(is_active=True)
 
 class DogDeactivatedListView(LoginRequiredMixin, ListView):
     model = Dog
@@ -76,6 +67,7 @@ class DogDeactivatedListView(LoginRequiredMixin, ListView):
         'title': 'Питомник - неактивные собаки'
     }
     template_name = 'dogs/dogs.html'
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -113,12 +105,13 @@ class DogDetailView(DetailView):
         dog_object_increase = get_object_or_404(Dog, pk=dog_object.pk)
         if dog_object.owner != self.request.user and not self.request.user.is_staff:
             # if not self.request.user.is_staff:
-                dog_object_increase.views_count()
+            dog_object_increase.views_count()
         if dog_object.owner:
             object_owner_email = dog_object.owner.email
             if dog_object_increase.views % 100 == 0 and dog_object_increase.views != 0:
                 send_views_mail(dog_object, object_owner_email, dog_object_increase.views)
         return context_data
+
 
 class DogUpdateView(LoginRequiredMixin, UpdateView):
     model = Dog
@@ -156,7 +149,6 @@ class DogUpdateView(LoginRequiredMixin, UpdateView):
 
         return super().form_valid(form)
 
-
     def get_object(self, queryset=None):
         dog_object = super().get_object(queryset)
         # Может редактировать как владелец, так и администрация сайта
@@ -167,10 +159,8 @@ class DogUpdateView(LoginRequiredMixin, UpdateView):
             raise PermissionDenied()
         return dog_object
 
-
     def get_success_url(self):
         return reverse('dogs:dog_detail', args=[self.kwargs.get('pk')])
-
 
 
 class DogDeleteView(PermissionRequiredMixin, DeleteView):
@@ -195,4 +185,3 @@ def dog_toggle_activity(request, pk):
         dog_object.is_active = True
     dog_object.save()
     return redirect(reverse('dogs:dogs_list'))
-
