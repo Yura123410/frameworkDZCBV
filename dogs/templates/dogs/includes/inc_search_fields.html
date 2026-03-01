@@ -1,3 +1,9 @@
+<form action="{% url 'dogs:breeds_search' %}" method="get" class="mb-2">
+    <input name="q" type="text" placeholder="Поиск породы собаки">
+    <button type="submit" class="btn btn-outline-primary btn-sm">Найти</button>
+</form>
+
 <form action="{% url 'dogs:dogs_search' %}" method="get">
     <input name="q" type="text" placeholder="Поиск собаки по кличке">
+    <button type="submit" class="btn btn-outline-primary btn-sm">Найти</button>
 </form>
