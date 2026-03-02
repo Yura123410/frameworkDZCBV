@@ -3,8 +3,6 @@ from django.core.cache import cache
 from django.core.mail import send_mail
 
 from dogs.models import Breed
-from dogs.models import Dog
-
 
 
 def get_breed_cache():
@@ -18,6 +16,7 @@ def get_breed_cache():
         breed_list = Breed.objects.all()
 
     return breed_list
+
 
 def send_views_mail(dog_object, owner_email, views_count):
     send_mail(

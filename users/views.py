@@ -3,8 +3,8 @@ import string
 
 from django.shortcuts import render, redirect
 from django.urls.base import reverse
-from django.http import HttpResponseRedirect ,HttpResponse
-from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.http import HttpResponseRedirect
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.views import LoginView, PasswordChangeView, LogoutView
@@ -15,6 +15,7 @@ from django.urls import reverse_lazy
 from users.models import User
 from users.forms import UserRegisterForm, UserLoginForm, UserUpdateForm, UserChangePasswordForm, UserForm
 from users.services import send_register_email, send_new_password
+
 
 class UserRegisterView(CreateView):
     model = User
@@ -30,6 +31,7 @@ class UserRegisterView(CreateView):
         send_register_email(self.object.email)
         return super().form_valid(form)
 
+
 class UserLoginView(LoginView):
     template_name = 'users/user_login.html'
     form_class = UserLoginForm
@@ -42,11 +44,12 @@ class UserProfileView(DetailView):
     model = User
     form_class = UserForm
     template_name = 'users/user_profile_read_only.html'
+
     # extra_context = {
     #     'title': "Ваш профиль"
     # }
 
-    def get_object(self, queryset = None):
+    def get_object(self, queryset=None):
         return self.request.user
 
     def get_context_data(self, **kwargs):
@@ -55,13 +58,14 @@ class UserProfileView(DetailView):
         context_data['title'] = f'Профиль пользователя {user_obj}'
         return context_data
 
+
 class UserUpdateView(UpdateView):
     model = User
     form_class = UserUpdateForm
     template_name = 'users/user_register_update.html'
     success_url = reverse_lazy('users:user_profile')
 
-    def get_object(self, queryset = None):
+    def get_object(self, queryset=None):
         return self.request.user
 
     def get_context_data(self, **kwargs):
@@ -69,6 +73,7 @@ class UserUpdateView(UpdateView):
         user_obj = self.get_object()
         context_data['title'] = f'Изменить профиль: {user_obj}'
         return context_data
+
 
 class UserPasswordChangeView(PasswordChangeView):
     form_class = UserChangePasswordForm
@@ -91,10 +96,11 @@ def user_change_password_view(request):
             return HttpResponseRedirect(reverse('users:user_profile'))
         messages.error(request, 'Не удалось изменить пароль')
     context = {
-        'form':form,
+        'form': form,
         'title': f'Изменить пароль {user_object}',
     }
     return render(request, 'users/user_change_password.html', context=context)
+
 
 class UserLogoutView(LogoutView):
     template_name = 'users/user_logout.html'
@@ -116,16 +122,17 @@ class UserListView(LoginRequiredMixin, ListView):
         queryset = queryset.filter(is_active=True)
         return queryset
 
+
 class UserDetailView(DetailView):
     model = User
     template_name = 'users/user_detail.html'
-
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data()
         user_object = self.get_object()
         context_data['title'] = f'Профиль пользователя {user_object}'
         return context_data
+
 
 @login_required(login_url='users:user_login')
 def user_generate_new_password_view(request):
@@ -134,6 +141,3 @@ def user_generate_new_password_view(request):
     request.user.save()
     send_new_password(request.user.email, new_password)
     return redirect(reverse('dogs:index'))
-
-
-

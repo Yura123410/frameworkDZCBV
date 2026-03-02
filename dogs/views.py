@@ -1,10 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
-from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.http import Http404
 from django.forms import inlineformset_factory
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q
@@ -12,7 +9,6 @@ from django.db.models import Q
 from dogs.models import Breed, Dog, DogParent
 from dogs.forms import DogForm, DogParentForm, DogCreateForm, DogAdminForm
 from dogs.services import send_views_mail
-from users import models
 from users.services import send_dog_creation
 from users.models import UserRoles
 
@@ -47,6 +43,7 @@ class DogBreedsListView(ListView):
         queryset = queryset.filter(is_active=True)
         return queryset
 
+
 class BreedSearchListView(ListView):
     model = Breed
     template_name = 'dogs/breeds.html'
@@ -62,12 +59,12 @@ class BreedSearchListView(ListView):
         return object_list
 
 
-
 class DogsListView(ListView):
     model = Dog
     extra_context = {
         'title': 'Питомник все наши собаки'
     }
+
     template_name = 'dogs/dogs.html'
     paginate_by = 3
 
@@ -90,6 +87,7 @@ class DogDeactivatedListView(LoginRequiredMixin, ListView):
         queryset = queryset.filter(is_active=False)
         return queryset
 
+
 class DogSearchListView(ListView):
     model = Dog
     template_name = 'dogs/dogs.html'
@@ -103,6 +101,7 @@ class DogSearchListView(ListView):
             Q(name__icontains=query), is_active=True,
         )
         return object_list
+
 
 class AllSearchListView(ListView):
     model = Breed
@@ -122,6 +121,7 @@ class AllSearchListView(ListView):
         )
         object_list = list(dog_object_list) + list(breed_object_list)
         return object_list
+
 
 class DogCreateView(LoginRequiredMixin, CreateView):
     model = Dog

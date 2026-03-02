@@ -13,7 +13,8 @@ class Review(models.Model):
     created = models.DateTimeField(verbose_name='Создан', auto_now_add=True)
     sign_of_review = models.BooleanField(default=True,
                                          verbose_name='Активность')  # Не забыть изменить на False в релизе
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Автор') # В зависимости от ТЗ
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE,
+                               verbose_name='Автор')  # В зависимости от ТЗ
     dog = models.ForeignKey(Dog, on_delete=models.CASCADE, related_name='dogs', verbose_name='Собака')
 
     def __str__(self):

@@ -4,8 +4,6 @@ from reviews.apps import ReviewsConfig
 from reviews.views import ReviewListView, ReviewDeactivatedListView, ReviewCreateView, ReviewDetailView, \
     ReviewDeleteView, ReviewUpdateView, review_toggle_activity
 
-
-
 app_name = ReviewsConfig.name
 
 urlpatterns = [

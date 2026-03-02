@@ -7,7 +7,6 @@ from users.models import User
 from users.validators import validate_password
 
 
-
 class StyleFormMixin:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,7 +21,6 @@ class UserForm(StyleFormMixin, forms.ModelForm):
 
 
 class UserRegisterForm(StyleFormMixin, UserCreationForm):
-
     class Meta:
         model = User
         fields = ('email',)
@@ -38,10 +36,12 @@ class UserRegisterForm(StyleFormMixin, UserCreationForm):
 class UserLoginForm(StyleFormMixin, AuthenticationForm):
     pass
 
+
 class UserUpdateForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = User
         fields = ('email', 'first_name', 'last_name', 'phone', 'telegram', 'avatar')
+
 
 class UserChangePasswordForm(StyleFormMixin, PasswordChangeForm):
     def clean_new_password2(self):

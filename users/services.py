@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.core.mail import send_mail
-from pyexpat.errors import messages
 
 
 def send_register_email(email):
@@ -11,6 +10,7 @@ def send_register_email(email):
         recipient_list=[email]
     )
 
+
 def send_new_password(email, new_password):
     send_mail(
         subject='Вы успешно изменили пароль',
@@ -18,6 +18,7 @@ def send_new_password(email, new_password):
         from_email=settings.EMAIL_HOST_USER,
         recipient_list=[email]
     )
+
 
 def send_dog_creation(email, dog_obj):
     send_mail(
