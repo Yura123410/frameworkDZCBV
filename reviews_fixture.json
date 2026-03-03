@@ -1,0 +1,28 @@
+[
+{
+    "model": "reviews.review",
+    "pk": 1,
+    "fields": {
+        "title": "TestReviews",
+        "slug": "test_slug",
+        "content": "Test",
+        "created": "2026-02-26T19:56:48.798Z",
+        "sign_of_review": false,
+        "author": 1,
+        "dog": 2
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 7,
+    "fields": {
+        "title": "Для удаления",
+        "slug": "UXZzwr6QC49sbQqpQ14J",
+        "content": "Для удаления 2121",
+        "created": "2026-03-01T18:46:34.736Z",
+        "sign_of_review": true,
+        "author": 4,
+        "dog": 1
+    }
+}
+]
