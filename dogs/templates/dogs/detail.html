@@ -19,6 +19,8 @@
         <div class="card-footer">
             {% if user == object.owner %}
             <a class="btn btn-link" href="{% url 'dogs:dog_update' object.pk %}">Изменить</a>
+            {% endif %}
+            {% if user.is_superuser %}
             <a class="btn btn-link" href="{% url 'dogs:dog_delete' object.pk %}">Удалить</a>
             {% endif %}
         </div>

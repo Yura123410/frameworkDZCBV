@@ -1,5 +1,992 @@
 [
 {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2026-02-21T18:01:27.811Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "5",
+        "object_repr": "yusimo@yandex.ru\nAnonymous Anonymous",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Role\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2026-02-21T18:01:39.901Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "2",
+        "object_repr": "moderator@web.top\nModer Moderov",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Role\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2026-02-21T18:01:53.469Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "1",
+        "object_repr": "admin@web.top\nAdmin Adminov",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Role\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2026-02-21T19:54:57.293Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Альберта (Немецкая Овчарка)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0425\\u043e\\u0437\\u044f\\u0438\\u043d\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2026-02-21T20:04:09.738Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Альберта (Немецкая Овчарка)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2026-02-21T20:04:27.608Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Альберта (Немецкая Овчарка)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2026-02-22T20:27:26.050Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "13",
+        "object_repr": "Мухтар 2 (Немецкая Овчарка)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2026-02-22T20:46:02.070Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "7",
+        "object_repr": "Майло Маска (Джек Рассел Терьер)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2026-02-22T20:46:27.111Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "13",
+        "object_repr": "Мухтар 2 (Немецкая Овчарка)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2026-02-23T06:34:24.612Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Майло (Джек Рассел Терьер)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0425\\u043e\\u0437\\u044f\\u0438\\u043d\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2026-02-23T06:37:39.389Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "5",
+        "object_repr": "yusimo@yandex.ru\nAnonymous Anonymous",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Role\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2026-02-23T16:42:40.723Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "7",
+        "object_repr": "Майло Маска (Джек Рассел Терьер)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2026-02-24T19:03:14.184Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Альберта (Немецкая Овчарка)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\", \"\\u041f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440\\u044b\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2026-02-26T19:56:48.803Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "TestReviews",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2026-03-11T19:09:10.544Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "1",
+        "object_repr": "Насекомые",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2026-03-11T19:10:55.265Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Муравей",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2026-03-13T19:34:14.260Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "Вопрос по курсу Кошки",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2026-03-13T19:36:21.368Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "Вопрос по курсу Насекомые",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2026-03-14T17:48:09.433Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "11",
+        "object_repr": "аыыаиаыи",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2026-03-14T17:48:14.722Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "12",
+        "object_repr": "аыыаиаыи",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2026-03-14T17:51:03.666Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Мухтар (Немецкая Овчарка)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0425\\u043e\\u0437\\u044f\\u0438\\u043d\"]}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add User",
+        "content_type": 6,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change User",
+        "content_type": 6,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete User",
+        "content_type": 6,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view User",
+        "content_type": 6,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add breed",
+        "content_type": 7,
+        "codename": "add_breed"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change breed",
+        "content_type": 7,
+        "codename": "change_breed"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete breed",
+        "content_type": 7,
+        "codename": "delete_breed"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view breed",
+        "content_type": 7,
+        "codename": "view_breed"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add dog",
+        "content_type": 8,
+        "codename": "add_dog"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change dog",
+        "content_type": 8,
+        "codename": "change_dog"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete dog",
+        "content_type": 8,
+        "codename": "delete_dog"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view dog",
+        "content_type": 8,
+        "codename": "view_dog"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add dog parent",
+        "content_type": 9,
+        "codename": "add_dogparent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change dog parent",
+        "content_type": 9,
+        "codename": "change_dogparent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete dog parent",
+        "content_type": 9,
+        "codename": "delete_dogparent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view dog parent",
+        "content_type": 9,
+        "codename": "view_dogparent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add review",
+        "content_type": 10,
+        "codename": "add_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change review",
+        "content_type": 10,
+        "codename": "change_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete review",
+        "content_type": 10,
+        "codename": "delete_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view review",
+        "content_type": 10,
+        "codename": "view_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add Section",
+        "content_type": 11,
+        "codename": "add_section"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change Section",
+        "content_type": 11,
+        "codename": "change_section"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete Section",
+        "content_type": 11,
+        "codename": "delete_section"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view Section",
+        "content_type": 11,
+        "codename": "view_section"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add Content",
+        "content_type": 12,
+        "codename": "add_content"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change Content",
+        "content_type": 12,
+        "codename": "change_content"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete Content",
+        "content_type": 12,
+        "codename": "delete_content"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view Content",
+        "content_type": 12,
+        "codename": "view_content"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add Question",
+        "content_type": 13,
+        "codename": "add_question"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change Question",
+        "content_type": 13,
+        "codename": "change_question"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete Question",
+        "content_type": 13,
+        "codename": "delete_question"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view Question",
+        "content_type": 13,
+        "codename": "view_question"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "users",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "dogs",
+        "model": "breed"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "dogs",
+        "model": "dog"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "dogs",
+        "model": "dogparent"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "reviews",
+        "model": "review"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "sections",
+        "model": "section"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "sections",
+        "model": "content"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "sections",
+        "model": "question"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "rj1h8x91i5tsi1fop4qq3jlinnor4mzp",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQAP_C2RC2FEGP3vsGsuyuUjWQlPZk_LuS9KDXmcm8VMRtzXFrssSZ1Vk5dfhlCekhpQu-Y7lVTbWsy5x0T_Rum54qy_Oyt3-DjC33bSBgEkLDR7oal3wYAlj2I1jkE3yFA0GwgSyaZDGglxFNELCDkKj3B_kdOG4:1vuHhy:pQ_YUQtxln_F0-XxjUXMCH7kXiDrgpFKH-BzQnv834Q",
+        "expire_date": "2026-03-08T22:13:46.043Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "viddh4qiwrt16mj6iz9otmsg3d911571",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyEslFI8eu83kF1YpGpoUtqT8d9tkx70NMm8N_MWAbe1hK3xEqYkrgLE5bcjjE-uB0gPrPdZxrmuy0TyUORJmxznxK_b6f4dFGxlX-ueHACRVcTKdLwHcMwaBo9M0aLL4AdNWSfFYE3vFEey0BmVszdOfL7x5zgX:1w1Uf9:UCsWq90QYNlFx2s1crJg2wz0K1nVBXjKS5wOYDdbhJg",
+        "expire_date": "2026-03-28T19:28:39.950Z"
+    }
+},
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$hhcb36hN9VlKIvCtEzo7Zo$FDFvlvagoAegcCekPbl19RzRmW8aHRCbpmz/zDV7TGw=",
+        "last_login": "2026-03-14T19:28:39.943Z",
+        "is_superuser": true,
+        "is_staff": true,
+        "date_joined": "2026-02-18T20:34:14Z",
+        "email": "admin@web.top",
+        "role": "admin",
+        "first_name": "Admin",
+        "last_name": "Adminov",
+        "avatar": "",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$dHqfvAwZhcvYtMbPObt7XY$IB7vxP9jRqeBoNZDQcnXogrUQzB6/7YeYkLKYI3Ael4=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": true,
+        "date_joined": "2026-02-18T20:34:16Z",
+        "email": "moderator@web.top",
+        "role": "moderator",
+        "first_name": "Moder",
+        "last_name": "Moderov",
+        "avatar": "",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$ojTSLp39wLDUwI5LuZ5JFm$sR/nEtooVGBYs0PbWffV6oH32JP40mR+k6ON9GHowo8=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2026-02-18T20:34:17.763Z",
+        "email": "user@web.top",
+        "role": "user",
+        "first_name": "User",
+        "last_name": "Userov",
+        "avatar": "",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$taqGUCvMgIHcDx2HhhCLFM$3aMWQuvAjawieLZ0b1XCjPe9BybS0zFx8sBLz29r+xY=",
+        "last_login": "2026-03-14T17:59:21.231Z",
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2026-02-19T17:23:41.155Z",
+        "email": "yura@gmail.com",
+        "role": "user",
+        "first_name": "Anonymous",
+        "last_name": "Anonymous",
+        "avatar": "",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$LZWXnHQSOecVldYcFNXE0V$HG6rvIH/6ry4uEUqDPPnI+AvbiePuEWlkXru41XyL/k=",
+        "last_login": "2026-03-14T17:52:24.940Z",
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2026-02-19T20:30:19Z",
+        "email": "yusimo@yandex.ru",
+        "role": "user",
+        "first_name": "Anonymous",
+        "last_name": "Anonymous",
+        "avatar": "",
+        "phone": null,
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$V8IivGViSnfzjD5rBENtVZ$uPu25Ei+kFfdX63RHEv4r/jy/DAgyLal4AhUs79+t58=",
+        "last_login": "2026-03-14T11:04:47.894Z",
+        "is_superuser": false,
+        "is_staff": false,
+        "date_joined": "2026-03-14T11:04:34.384Z",
+        "email": "yura4@gmail.com",
+        "role": "user",
+        "first_name": "Anonymous",
+        "last_name": "Anonymous",
+        "avatar": "",
+        "phone": "88005553536",
+        "telegram": null,
+        "is_active": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "dogs.breed",
     "pk": 1,
     "fields": {
@@ -48,8 +1035,8 @@
         "photo": "dogs/images.jpg",
         "birth_date": "2025-07-10",
         "is_active": true,
-        "owner": null,
-        "views": 1
+        "owner": 5,
+        "views": 102
     }
 },
 {
@@ -75,7 +1062,7 @@
         "birth_date": "2024-07-11",
         "is_active": true,
         "owner": null,
-        "views": 1
+        "views": 10
     }
 },
 {
@@ -140,6 +1127,32 @@
         "birth_date": "2023-10-08",
         "is_active": true,
         "owner": 1,
+        "views": 1
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 15,
+    "fields": {
+        "name": "Майло Маска",
+        "breed": 5,
+        "photo": "dogs/imagesМайло_BXpsl2g.jpg",
+        "birth_date": null,
+        "is_active": true,
+        "owner": 4,
+        "views": 0
+    }
+},
+{
+    "model": "dogs.dog",
+    "pk": 16,
+    "fields": {
+        "name": "Лайка",
+        "breed": 4,
+        "photo": "dogs/square_1280_1f22103e8460f78adfbab7a100c558c6_yq09Kps.jpg",
+        "birth_date": "2020-08-08",
+        "is_active": true,
+        "owner": 4,
         "views": 0
     }
 },
@@ -151,6 +1164,45 @@
         "name": "Бернард",
         "breed": 1,
         "birth_date": null
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 1,
+    "fields": {
+        "title": "TestReviews",
+        "slug": "test_slug",
+        "content": "Test",
+        "created": "2026-02-26T19:56:48.798Z",
+        "sign_of_review": true,
+        "author": 1,
+        "dog": 2
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 13,
+    "fields": {
+        "title": "побпоб",
+        "slug": "5Uv1NiBaYclCY07gWdxq",
+        "content": "орборбр",
+        "created": "2026-03-14T17:46:52.893Z",
+        "sign_of_review": false,
+        "author": 1,
+        "dog": 1
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 14,
+    "fields": {
+        "title": "Мухтар",
+        "slug": "BZwOgNtcPKi5rkla7xr8",
+        "content": "Хорошая собака",
+        "created": "2026-03-14T17:53:01.898Z",
+        "sign_of_review": false,
+        "author": 5,
+        "dog": 1
     }
 }
 ]

@@ -8,7 +8,7 @@ from dogs.models import Dog
 
 class Review(models.Model):
     title = models.CharField(max_length=150, verbose_name='Заголовок')
-    slug = models.SlugField(max_length=25, unique=True, verbose_name='URL')
+    slug = models.SlugField(max_length=255, unique=True, verbose_name='URL')
     content = models.TextField(verbose_name='Содержимое')
     created = models.DateTimeField(verbose_name='Создан', auto_now_add=True)
     sign_of_review = models.BooleanField(default=False,

@@ -13,8 +13,11 @@
             <ul class="list-unstyled mt-3 md-4 text-start m-3">
                 <li>Создан: {{ object.created }}</li>
             </ul>
+
+            {% if object.slug %}
             <a class="btn btn-lg btn-block btn-outline-info"
                href="{% url 'reviews:review_detail' object.slug %}">Подробнее</a>
+
             {% if object.author == user %}
             <a class="btn btn-lg btn-block btn-outline-warning"
                href="{% url 'reviews:review_update' object.slug %}">Изменить отзыв</a>
@@ -23,6 +26,9 @@
             {% elif user.role == 'admin' %}
             <a class="btn btn-lg btn-block btn-outline-danger"
                href="{% url 'reviews:review_delete' object.slug %}">Удалить отзыв</a>
+            {% endif %}
+            {% else %}
+            <a class="btn btn-lg btn-block btn-outline-secondary disabled" href="#">Черновик</a>
             {% endif %}
         </div>
     </div>

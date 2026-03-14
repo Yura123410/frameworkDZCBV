@@ -215,7 +215,7 @@ class DogDeleteView(PermissionRequiredMixin, DeleteView):
     model = Dog
     template_name = 'dogs/delete.html'
     success_url = reverse_lazy('dogs:dogs_list')
-    permission_required = 'dogs:delete_dog'
+    permission_required = 'dogs.delete_dog'
     permission_denied_message = 'У Вас нет необходимых прав для этого действия'
 
     def get_context_data(self, **kwargs):
